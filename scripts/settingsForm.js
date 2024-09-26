@@ -13,7 +13,7 @@ export class SettingsForm extends FormApplication {
    * @memberof SettingsForm
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: `${mod}-settings-form`,
       title: game.i18n.localize("TagIt.SettingTitle"),
       template: `modules/${mod}/templates/settings.html`,

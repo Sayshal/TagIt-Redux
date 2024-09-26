@@ -14,7 +14,7 @@ export class EditTag extends FormApplication {
    * @memberof EditTag
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: `${mod}-edit-tag-form`,
       title: game.i18n.localize("TagIt.EditTag.title"),
       template: `modules/${mod}/templates/edittag.html`,
