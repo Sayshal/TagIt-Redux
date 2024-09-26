@@ -7,7 +7,7 @@ export class TagItTagManager {
     let tags = new Set();
 
     const journaltags = game.journal
-      .filter((a) => a.flags?.tagit?.tags?.length > 0)
+      .filter(a.getFlag("tagit", "tags")?.length > 0)
       .map((a) => {
         return a.flags.tagit.tags.filter((b) => {
           if (tags.has(b.tag)) {
@@ -20,7 +20,7 @@ export class TagItTagManager {
       .flat();
 
     const scenetags = game.scenes
-      .filter((a) => a.flags?.tagit?.tags?.length > 0)
+      .filter(a.getFlag("tagit", "tags")?.length > 0)
       .map((a) => {
         return a.flags.tagit.tags.filter((b) => {
           if (tags.has(b.tag)) {
@@ -33,7 +33,7 @@ export class TagItTagManager {
       .flat();
 
     const actortags = game.actors
-      .filter((a) => a.flags?.tagit?.tags?.length > 0)
+      .filter(a.getFlag("tagit", "tags")?.length > 0)
       .map((a) => {
         return a.flags.tagit.tags.filter((b) => {
           if (tags.has(b.tag)) {
@@ -46,7 +46,7 @@ export class TagItTagManager {
       .flat();
 
     const itemtags = game.items
-      .filter((a) => a.flags?.tagit?.tags?.length > 0)
+      .filter(a.getFlag("tagit", "tags")?.length > 0)
       .map((a) => {
         return a.flags.tagit.tags.filter((b) => {
           if (tags.has(b.tag)) {
@@ -164,25 +164,25 @@ export class TagItTagManager {
     const promises = [];
 
     for (const document of game.journal.filter(
-      (a) => a.flags?.tagit?.tags?.length > 0
+      a.getFlag("tagit", "tags")?.length > 0
     )) {
       promises.push(document.unsetFlag(mod, "tags"));
     }
 
     for (const document of game.scenes.filter(
-      (a) => a.flags?.tagit?.tags?.length > 0
+      a.getFlag("tagit", "tags")?.length > 0
     )) {
       promises.push(document.unsetFlag(mod, "tags"));
     }
 
     for (const document of game.actors.filter(
-      (a) => a.flags?.tagit?.tags?.length > 0
+      a.getFlag("tagit", "tags")?.length > 0
     )) {
       promises.push(document.unsetFlag(mod, "tags"));
     }
 
     for (const document of game.items.filter(
-      (a) => a.flags?.tagit?.tags?.length > 0
+      a.getFlag("tagit", "tags")?.length > 0
     )) {
       promises.push(document.unsetFlag(mod, "tags"));
     }

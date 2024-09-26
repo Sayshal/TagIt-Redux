@@ -261,7 +261,7 @@ class TagIt extends FormApplication {
 
     for (const scene of game.scenes.filter((a) => a.tokens.size > 0)) {
       for (const document of scene.tokens.filter(
-        (a) => a.flags?.tagit?.tags?.length > 0
+        a.getFlag("tagit", "tags")?.length > 0
       )) {
         const tags = document.getFlag("tagit", "tags");
 
