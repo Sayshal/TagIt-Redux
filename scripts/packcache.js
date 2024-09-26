@@ -16,7 +16,7 @@ export class TagItPackCache {
         pack: pack.metadata.package,
         name: pack.metadata.name,
         type: pack.documentName,
-        index: pack.getIndex({ fields: ["flags", "img", "thumb"] }),
+        index: pack.getIndex({ fields: ["flags",  "thumb"] }), //removed "img", for testing.
       });
     }
 
@@ -143,7 +143,7 @@ export class TagItPackCache {
 
   static async updateCompendiumCache(compendium) {
     const index = await compendium.getIndex({
-      fields: ["flags", "img", "thumb"],
+      fields: ["flags", "thumb"], //removed , "img" for testing.
     });
 
     TagItPackCache._index[

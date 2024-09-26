@@ -74,7 +74,7 @@ export class TagItIndex {
                   ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
-              img: document.data.img,
+              img: document.img,
             };
           })
       );
@@ -92,7 +92,7 @@ export class TagItIndex {
                   ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
-              img: document.data.thumb,
+              img: document.thumb,
             };
           })
       );
@@ -110,7 +110,7 @@ export class TagItIndex {
                   ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
-              img: document.data.img,
+              img: document.img,
             };
           })
       );
@@ -128,7 +128,7 @@ export class TagItIndex {
                   ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
-              img: document.data.img,
+              img: document.img,
             };
           })
       );

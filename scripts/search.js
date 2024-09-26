@@ -517,7 +517,7 @@ export class TagItSearch extends FormApplication {
           .filter((item) => item !== undefined)
           .sort(tagsort),
         document: document,
-        img: document.data.img,
+        img: document.img,
       };
     };
 
