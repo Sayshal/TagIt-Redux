@@ -46,7 +46,7 @@ class TagIt extends FormApplication {
 
     this.tagcache = await TagItTagManager.getUsedTags();
 
-    data.tags = this.tags.sort(tagsort);
+    data.tags = this.tags.sort(tagsort());
     data.tagcache = this.tagcache;
     flags = this.entity.flags;
     data.owner = game.user.id;

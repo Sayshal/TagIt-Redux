@@ -26,13 +26,13 @@ export class RemoveForm extends FormApplication {
     return data;
   }
 
-  activateListeners(html) {
+  activateListeners() {
     const _this = this;
 
     $("button[name=cancel]").focus();
   }
 
-  async _updateObject(event, formData) {
+  async _updateObject(event) {
     if ($(event.submitter).attr("name") === "delete") {
       // Remove it all!
 

@@ -1,7 +1,8 @@
 import { mod } from "./settings.js";
-
 export function tagsort(a, b) {
   const def = game.settings.get(mod, "defaultSort");
+  if (!a) {a = def}
+  if (!b) {b = def}
 
   let sort = (a.sort ?? def) - (b.sort ?? def);
 
@@ -35,7 +36,7 @@ export function tagsort(a, b) {
 }
 
 export class TagItIndex {
-  static _index = new Array();
+  static _index = [];
 
   static get DocumentTypes() {
     return ["JournalEntry", "Actor", "Item", "Scene"];
@@ -45,7 +46,7 @@ export class TagItIndex {
     const promise = new Promise(async function (resolve, reject) {
       const t0 = performance.now();
 
-      TagItIndex._index = new Array();
+      TagItIndex._index = [];
       const index = TagItIndex._index;
 
       const compendiums = game.packs
@@ -71,7 +72,7 @@ export class TagItIndex {
               documentName: document.documentName,
               tags:
                 document.flags?.tagit?.tags?.length > 0
-                  ? document.flags.tagit.tags.sort(tagsort)
+                  ? document.flags.tagit.tags.sort(tagsort())
                   : [],
               document: document,
               img: document.img,
@@ -89,7 +90,7 @@ export class TagItIndex {
               documentName: document.documentName,
               tags:
                 document.flags?.tagit?.tags?.length > 0
-                  ? document.flags.tagit.tags.sort(tagsort)
+                  ? document.flags.tagit.tags.sort(tagsort())
                   : [],
               document: document,
               img: document.thumb,
@@ -107,7 +108,7 @@ export class TagItIndex {
               documentName: document.documentName,
               tags:
                 document.flags?.tagit?.tags?.length > 0
-                  ? document.flags.tagit.tags.sort(tagsort)
+                  ? document.flags.tagit.tags.sort(tagsort())
                   : [],
               document: document,
               img: document.img,
@@ -125,7 +126,7 @@ export class TagItIndex {
               documentName: document.documentName,
               tags:
                 document.flags?.tagit?.tags?.length > 0
-                  ? document.flags.tagit.tags.sort(tagsort)
+                  ? document.flags.tagit.tags.sort(tagsort())
                   : [],
               document: document,
               img: document.img,
@@ -146,7 +147,7 @@ export class TagItIndex {
               documentName: compendium.documentName,
               tags:
                 document.flags?.tagit?.tags?.length > 0
-                  ? document.flags.tagit.tags.sort(tagsort)
+                  ? document.flags.tagit.tags.sort(tagsort())
                   : [],
               get document() {
                 return (async () => {
@@ -185,14 +186,14 @@ export class TagItIndex {
 }
 
 for (const document of TagItIndex.DocumentTypes) {
-  Hooks.on(`create${document}`, (app, html, data) => {
+  Hooks.on(`create${document}`, (app) => {
     const newDocument = {
       id: app.id,
       name: app.name,
       documentName: app.documentName,
       tags:
         app.flags?.tagit?.tags?.length > 0
-          ? app.flags.tagit.tags.sort(tagsort)
+          ? app.flags.tagit.tags.sort(tagsort())
           : [],
       document: app,
       img: app.documentName === "Scene" ? app.thumb : app.img,
@@ -205,7 +206,7 @@ for (const document of TagItIndex.DocumentTypes) {
     TagItIndex._index.push(newDocument);
   });
 
-  Hooks.on(`update${document}`, (app, html, data) => {
+  Hooks.on(`update${document}`, (app, html) => {
     const index = TagItIndex._index.find(
       (a) => a.id === app.id && a.documentName === app.documentName
     );
@@ -219,7 +220,7 @@ for (const document of TagItIndex.DocumentTypes) {
     }
 
     if (html.flags?.tagit?.tags?.length > 0) {
-      index.tags = html.flags.tagit.tags.sort(tagsort);
+      index.tags = html.flags.tagit.tags.sort(tagsort());
     } else {
       index.tags = [];
     }
@@ -231,7 +232,7 @@ for (const document of TagItIndex.DocumentTypes) {
     }
   });
 
-  Hooks.on(`delete${document}`, (app, html, data) => {
+  Hooks.on(`delete${document}`, (app) => {
     const index = TagItIndex._index.findIndex(
       (a) => a.id === app.id && a.documentName === app.documentName
     );

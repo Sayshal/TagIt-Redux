@@ -304,7 +304,7 @@ export class EditTag extends FormApplication {
    * @param {object} data - the form data
    * @memberof EditTag
    */
-  async _updateObject(event, data) {
+  async _updateObject(data) {
     const _this = this;
 
     const text = data.tag.split(":");

@@ -104,7 +104,7 @@ export class ColorsForm extends FormApplication {
    * @param {object} data - the form data
    * @memberof SettingsForm
    */
-  async _updateObject(event, data) {
+  async _updateObject(data) {
     const color = {
       tag: {
         tag: data.tagColor,

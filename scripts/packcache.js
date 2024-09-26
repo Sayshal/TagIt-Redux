@@ -143,7 +143,7 @@ export class TagItPackCache {
 
   static async updateCompendiumCache(compendium) {
     const index = await compendium.getIndex({
-      fields: ["flags", "thumb"], //removed , "img" for testing.
+      fields: ["flags", "img", "thumb"],
     });
 
     TagItPackCache._index[
@@ -160,7 +160,7 @@ export class TagItPackCache {
   }
 }
 
-Hooks.on("updateCompendium", (app, html, data) => {
+Hooks.on("updateCompendium", (app, html) => {
   if (html.filter((a) => a.flags?.tagit?.tags).length > 0) {
     TagItPackCache.updateCompendiumCache(app);
   }

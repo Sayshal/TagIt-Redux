@@ -121,7 +121,7 @@ export class TagItTagManager {
       }
     }
 
-    return tags.sort(tagsort);
+    return tags.sort(tagsort());
 
     // return [...tags]
     // .sort((a,b) => {
