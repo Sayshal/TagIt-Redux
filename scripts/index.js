@@ -70,8 +70,8 @@ export class TagItIndex {
               name: document.name,
               documentName: document.documentName,
               tags:
-                document.data.flags?.tagit?.tags?.length > 0
-                  ? document.data.flags.tagit.tags.sort(tagsort)
+                document.flags?.tagit?.tags?.length > 0
+                  ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
               img: document.data.img,
@@ -88,8 +88,8 @@ export class TagItIndex {
               name: document.name,
               documentName: document.documentName,
               tags:
-                document.data.flags?.tagit?.tags?.length > 0
-                  ? document.data.flags.tagit.tags.sort(tagsort)
+                document.flags?.tagit?.tags?.length > 0
+                  ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
               img: document.data.thumb,
@@ -106,8 +106,8 @@ export class TagItIndex {
               name: document.name,
               documentName: document.documentName,
               tags:
-                document.data.flags?.tagit?.tags?.length > 0
-                  ? document.data.flags.tagit.tags.sort(tagsort)
+                document.flags?.tagit?.tags?.length > 0
+                  ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
               img: document.data.img,
@@ -124,8 +124,8 @@ export class TagItIndex {
               name: document.name,
               documentName: document.documentName,
               tags:
-                document.data.flags?.tagit?.tags?.length > 0
-                  ? document.data.flags.tagit.tags.sort(tagsort)
+                document.flags?.tagit?.tags?.length > 0
+                  ? document.flags.tagit.tags.sort(tagsort)
                   : [],
               document: document,
               img: document.data.img,
@@ -191,8 +191,8 @@ for (const document of TagItIndex.DocumentTypes) {
       name: app.name,
       documentName: app.documentName,
       tags:
-        app.data.flags?.tagit?.tags?.length > 0
-          ? app.data.flags.tagit.tags.sort(tagsort)
+        app.flags?.tagit?.tags?.length > 0
+          ? app.flags.tagit.tags.sort(tagsort)
           : [],
       document: app,
       img: app.documentName === "Scene" ? app.thumb : app.img,

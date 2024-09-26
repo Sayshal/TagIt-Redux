@@ -161,7 +161,7 @@ export class TagItPackCache {
 }
 
 Hooks.on("updateCompendium", (app, html, data) => {
-  if (html.filter((a) => a.data.flags?.tagit?.tags).length > 0) {
+  if (html.filter((a) => a.flags?.tagit?.tags).length > 0) {
     TagItPackCache.updateCompendiumCache(app);
   }
 });

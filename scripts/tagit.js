@@ -48,7 +48,7 @@ class TagIt extends FormApplication {
 
     data.tags = this.tags.sort(tagsort);
     data.tagcache = this.tagcache;
-    data.flags = this.entity.data.flags;
+    flags = this.entity.flags;
     data.owner = game.user.id;
     data.isGM = game.user.isGM;
     data.appId = this.appId;
@@ -175,13 +175,13 @@ class TagIt extends FormApplication {
     }
   }
 
-  static async migrateFrom02() {
+/*   static async migrateFrom02() {
     console.log(`TagIt!: Migrating from v0.2...`);
 
     const promises = [];
 
     for (const document of game.journal.filter((a) =>
-      a.data.flags?.tagit?.tags?.some((b) => typeof b === "string")
+      a.flags?.tagit?.tags?.some((b) => typeof b === "string")
     )) {
       const tags = document.getFlag("tagit", "tags");
 
@@ -195,7 +195,7 @@ class TagIt extends FormApplication {
     }
 
     for (const document of game.scenes.filter((a) =>
-      a.data.flags?.tagit?.tags?.some((b) => typeof b === "string")
+      a.flags?.tagit?.tags?.some((b) => typeof b === "string")
     )) {
       const tags = document.getFlag("tagit", "tags");
 
@@ -209,7 +209,7 @@ class TagIt extends FormApplication {
     }
 
     for (const document of game.actors.filter((a) =>
-      a.data.flags?.tagit?.tags?.some((b) => typeof b === "string")
+      a.flags?.tagit?.tags?.some((b) => typeof b === "string")
     )) {
       const tags = document.getFlag("tagit", "tags");
 
@@ -223,7 +223,7 @@ class TagIt extends FormApplication {
     }
 
     for (const document of game.items.filter((a) =>
-      a.data.flags?.tagit?.tags?.some((b) => typeof b === "string")
+      a.flags?.tagit?.tags?.some((b) => typeof b === "string")
     )) {
       const tags = document.getFlag("tagit", "tags");
 
@@ -261,7 +261,7 @@ class TagIt extends FormApplication {
 
     for (const scene of game.scenes.filter((a) => a.tokens.size > 0)) {
       for (const document of scene.tokens.filter(
-        (a) => a.data.flags?.tagit?.tags?.length > 0
+        (a) => a.flags?.tagit?.tags?.length > 0
       )) {
         const tags = document.getFlag("tagit", "tags");
 
@@ -284,7 +284,7 @@ class TagIt extends FormApplication {
     console.log(`TagIt!: Migrated ${promises.length} documents.`);
 
     console.log(`TagIt!: Done migrating.`);
-  }
+  } */
 }
 
 Hooks.on("renderJournalSheet", (app, html, data) => {
@@ -312,7 +312,7 @@ Hooks.once("ready", async () => {
     //        index: TagItIndex,
   };
 
-  await TagIt.migrateFrom02();
+//   await TagIt.migrateFrom02();
 
   await TagItPackCache.init();
   await TagItIndex.init();

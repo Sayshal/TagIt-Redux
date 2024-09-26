@@ -177,26 +177,26 @@ export class EditTag extends FormApplication {
       promises.push(this.modifyTag(await index.document, oldTag, newTag));
     }
 
-    // for (const entity of game.journal.filter(a => a.data.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
+    // for (const entity of game.journal.filter(a => a.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
     //     promises.push(this.modifyTag(entity, oldTag, newTag));
     // }
 
-    // for (const entity of game.scenes.filter(a => a.data.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
+    // for (const entity of game.scenes.filter(a => a.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
     //     promises.push(this.modifyTag(entity, oldTag, newTag));
     // }
 
-    // for (const entity of game.actors.filter(a => a.data.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
+    // for (const entity of game.actors.filter(a => a.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
     //     promises.push(this.modifyTag(entity, oldTag, newTag));
     // }
 
-    // for (const entity of game.items.filter(a => a.data.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
+    // for (const entity of game.items.filter(a => a.flags?.tagit?.tags?.some(a => a.tag === oldTag.tag))) {
     //     promises.push(this.modifyTag(entity, oldTag, newTag));
     // }
 
     for (const entity of canvas.tokens
       .getDocuments()
       .filter((a) =>
-        a.data.flags?.tagit?.tags?.some(
+        a.flags?.tagit?.tags?.some(
           (b) => b.tag === oldTag.tag && b.meta == oldTag.meta
         )
       )) {

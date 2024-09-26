@@ -509,7 +509,7 @@ export class TagItSearch extends FormApplication {
         tags: [
           ...new Set(
             [].concat(
-              document.data.flags?.tagit?.tags,
+              document.flags?.tagit?.tags,
               document.actor?.data?.flags?.tagit?.tags
             )
           ),
@@ -609,7 +609,7 @@ export class TagItSearch extends FormApplication {
 
             tokenFilter = function (document) {
               return (
-                document.data.flags?.tagit?.tags?.some(
+                document.flags?.tagit?.tags?.some(
                   (tag) => tag.tag.toLowerCase() === value.toLowerCase()
                 ) ||
                 document.actor?.data?.flags?.tagit?.tags?.some(
@@ -633,7 +633,7 @@ export class TagItSearch extends FormApplication {
 
             tokenFilter = function (document) {
               return (
-                document.data.flags?.tagit?.tags?.some(
+                document.flags?.tagit?.tags?.some(
                   (tag) =>
                     tag.meta && tag.meta.toLowerCase() === value.toLowerCase()
                 ) ||
@@ -715,7 +715,7 @@ export class TagItSearch extends FormApplication {
 
             tokenFilter = function (document) {
               return (
-                document.data.flags?.tagit?.tags?.some((tag) =>
+                document.flags?.tagit?.tags?.some((tag) =>
                   valueExpr(tag)
                 ) ||
                 document.actor?.data?.flags?.tagit?.tags?.some((tag) =>
@@ -741,7 +741,7 @@ export class TagItSearch extends FormApplication {
         // }
 
         // tokenFilter = function(document) {
-        //     return document.data.flags?.tagit?.tags?.some(tag => tag.tag.toLowerCase() === item.toLowerCase()) ||
+        //     return document.flags?.tagit?.tags?.some(tag => tag.tag.toLowerCase() === item.toLowerCase()) ||
         //     document.actor?.data?.flags?.tagit?.tags?.some(tag => tag.tag.toLowerCase() === item.toLowerCase());
         // }
 
