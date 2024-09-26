@@ -1,31 +1,88 @@
 <form autocomplete="off" onsubmit="event.preventDefault()">
-    <div style="margin: 1em 0 0 0;">
-        <div style="display:flex; flex-direction: row;justify-content: space-between;align-items: center;">
-            <div style="display:flex;align-items:center;">
-                <label for="tag" style="margin-right:1em;">{{ localize "TagIt.EditTag.Rename.label"}}</label><input style="place-self: stretch;" name="tag" value="{{object.tag}}" />
-                <button class="save" type="submit"><i class="fas fa-save" style="margin: 0 0.2em"></i></button>
-            </div>
-            
-            <div>
-                <button class="delete" type="button"><i class="fas fa-trash" style="margin: 0 0.2em"></i></button>
-            </div>
-        </div>
-        <div style="display:flex; flex-direction: row;justify-content: space-between;align-items: center;">
-            <div style="display:flex;align-items:center;margin-top:0.5em;height:2em">
-                <label for="sort" style="margin-right:1em;">{{ localize "TagIt.EditTag.Sort.label"}}</label><input style="place-self: stretch;" name="sort" value="{{sort}}" />
-                <label for="display-meta">Display Meta</label><input type="checkbox" name="display-meta" {{checked displayMeta}}/>
-            </div>
+  <div style="margin: 1em 0 0 0">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <div style="display: flex; align-items: center">
+        <label for="tag" style="margin-right: 1em"
+          >{{ localize "TagIt.EditTag.Rename.label"}}</label
+        ><input style="place-self: stretch" name="tag" value="{{object.tag}}" />
+        <button class="save" type="submit">
+          <i class="fas fa-save" style="margin: 0 0.2em"></i>
+        </button>
+      </div>
 
-        </div>
-        <div style="display:flex; flex-direction: row;justify-content: space-between;align-items: center;">
-            <div style="display:flex;align-items:center;margin-top:0.5em;height:2em">
-                <label for="defaultColor">Default Color</label><input type="checkbox" name="defaultColor" {{checked useDefaultColor}}/>
-                <input type="color" name="tagColor" value="{{color.tag}}"/><label for="tagColor" style="margin: 0 0.6em 0 0.2em;">Tag</label>
-                <input type="color" name="textColor" value="{{color.text}}"/><label for="textColor" style="margin: 0 0 0 0.2em;">Text</label>
-            </div>
-            <div class='tag-preview'>
-                <span class="tagit tag">{{object.tag}}</span>
-            </div>
-        </div>
+      <div>
+        <button class="delete" type="button">
+          <i class="fas fa-trash" style="margin: 0 0.2em"></i>
+        </button>
+      </div>
     </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          margin-top: 0.5em;
+          height: 2em;
+        "
+      >
+        <label for="sort" style="margin-right: 1em"
+          >{{ localize "TagIt.EditTag.Sort.label"}}</label
+        ><input style="place-self: stretch" name="sort" value="{{sort}}" />
+        <label for="display-meta">Display Meta</label
+        ><input type="checkbox" name="display-meta" {{checked displayMeta}} />
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          margin-top: 0.5em;
+          height: 2em;
+        "
+      >
+        <label for="defaultColor">Default Color</label
+        ><input
+          type="checkbox"
+          name="defaultColor"
+          {{checked
+          useDefaultColor}}
+        />
+        <input type="color" name="tagColor" value="{{color.tag}}" /><label
+          for="tagColor"
+          style="margin: 0 0.6em 0 0.2em"
+          >Tag</label
+        >
+        <input type="color" name="textColor" value="{{color.text}}" /><label
+          for="textColor"
+          style="margin: 0 0 0 0.2em"
+          >Text</label
+        >
+      </div>
+      <div class="tag-preview">
+        <span class="tagit tag">{{object.tag}}</span>
+      </div>
+    </div>
+  </div>
 </form>

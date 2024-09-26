@@ -1,92 +1,92 @@
 div.directory.tagit.search-app {
-    overflow-y:hidden;
-    height:100%;
+  overflow-y: hidden;
+  height: 100%;
 }
 
 .tagit.collection {
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .tagit.item {
-    padding:2px 5px 2px 5px;
-    margin: 5px;
-    box-shadow: 2px 2px 3px grey;
-    flex-shrink: 3;
-    border: 1px solid #000;
-    border-radius: 5px
+  padding: 2px 5px 2px 5px;
+  margin: 5px;
+  box-shadow: 2px 2px 3px grey;
+  flex-shrink: 3;
+  border: 1px solid #000;
+  border-radius: 5px;
 }
 
 .tagit.entity-filter {
-    text-align: left;
-    line-height: normal;
+  text-align: left;
+  line-height: normal;
 }
 
-.tagit.entity-filter input[type=checkbox] {
-    vertical-align:middle;
+.tagit.entity-filter input[type="checkbox"] {
+  vertical-align: middle;
 }
 
 .tagit.collection .fas.fa-times-circle {
-    margin-left:5px;
+  margin-left: 5px;
 }
 
 .tagit.search.directory-list .directory-item {
-    padding-right: 4px;
+  padding-right: 4px;
 }
 
 .tagit.search.directory-list .directory-item h4 span {
-    font-size:0.8em;
-    margin-left: 1em;
-    float:right;
+  font-size: 0.8em;
+  margin-left: 1em;
+  float: right;
 }
 
 ol.tagit.search.directory-list li {
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-    min-height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
 }
 
 ol.tagit.search.directory-list li div.entry-name {
-    display:flex;
-    flex-direction: column;
-    place-items: flex-start;
-    line-height: normal
+  display: flex;
+  flex-direction: column;
+  place-items: flex-start;
+  line-height: normal;
 }
 
 ol.tagit.search.directory-list li div.entry-name h4 {
-    margin-bottom:0.2em;
+  margin-bottom: 0.2em;
 }
 
 ol.tagit.search.directory-list li div.entity-info {
-    font-size:0.8em;
-    line-height:normal;
-    flex:none;
-    text-align:right;
+  font-size: 0.8em;
+  line-height: normal;
+  flex: none;
+  text-align: right;
 }
 
 ol.tagit.search.directory-list li div.tag.collection {
-    font-size:0.7em;
+  font-size: 0.7em;
 }
 
 span.tagit.tag {
-    border-radius:6px;
-    padding: 1px 4px;
-    box-shadow: 2px 2px 3px grey;
-    border: darkred 1px solid;
-    background-color: darkred;
-    color: white;
-    margin: 0.1em;
-    font-weight: bold;
+  border-radius: 6px;
+  padding: 1px 4px;
+  box-shadow: 2px 2px 3px grey;
+  border: darkred 1px solid;
+  background-color: darkred;
+  color: white;
+  margin: 0.1em;
+  font-weight: bold;
 }
 
 span.tagit.tag.entity-type {
-    border:yellow 1px solid;
-    background:yellow;
-    color: black;
+  border: yellow 1px solid;
+  background: yellow;
+  color: black;
 }
 
 .directory-header .tagit.collection {
-    line-height: normal;
+  line-height: normal;
 }

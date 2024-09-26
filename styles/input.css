@@ -1,27 +1,27 @@
 div.tagit.tag.input {
-    display: flex;
-    flex-wrap: nowrap;
-    text-align: left;
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
 }
 
 div.tagit.tag.input i.fa-search {
-    line-height: 2em;
-    margin: 0 0.5em;
+  line-height: 2em;
+  margin: 0 0.5em;
 }
 
 div.tagit.tag.input input {
-    line-height: 1em;
-    height: auto;
+  line-height: 1em;
+  height: auto;
 }
 
 div.tag.collection {
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    line-height: normal;
-    margin: 0.5em 0.3em 0.4em 0.3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: normal;
+  margin: 0.5em 0.3em 0.4em 0.3em;
 }
 
 .tag.collection .fas.fa-times-circle {
-    margin-left:5px;
+  margin-left: 5px;
 }

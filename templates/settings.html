@@ -1,7 +1,11 @@
-<form autocomplete="off" onsubmit="event.preventDefault()" style="height:100%; overflow:hidden;">
-    <div class="directory flexcol tagit search-app">
-        <header class="directory-header flexcol">
-            {{> 'modules/tagit/templates/input-partial.html' this}}
-        </header>
-    </div>
+<form
+  autocomplete="off"
+  onsubmit="event.preventDefault()"
+  style="height: 100%; overflow: hidden"
+>
+  <div class="directory flexcol tagit search-app">
+    <header class="directory-header flexcol">
+      {{> 'modules/tagit-redux/templates/input-partial.html' this}}
+    </header>
+  </div>
 </form>

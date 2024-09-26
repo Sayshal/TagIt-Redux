@@ -1,21 +1,57 @@
 <form>
-    <div style="display:flex; flex-direction: row;justify-content: space-between;align-items: center;">
-        <div style="display:flex;align-items:center;margin:0.5em 0;height:2em">
-            <input type="color" name="tagColor" value="{{color.tag.tag}}"/><label for="tagColor" style="margin: 0 0.6em 0 0.2em;">Tag</label>
-            <input type="color" name="textColor" value="{{color.tag.text}}"/><label for="textColor" style="margin: 0 0 0 0.2em;">Text</label>
-        </div>
-        <div class='tag-preview'>
-            <span class="tagit tag">tag</span>
-        </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <div
+      style="display: flex; align-items: center; margin: 0.5em 0; height: 2em"
+    >
+      <input type="color" name="tagColor" value="{{color.tag.tag}}" /><label
+        for="tagColor"
+        style="margin: 0 0.6em 0 0.2em"
+        >Tag</label
+      >
+      <input type="color" name="textColor" value="{{color.tag.text}}" /><label
+        for="textColor"
+        style="margin: 0 0 0 0.2em"
+        >Text</label
+      >
     </div>
-    <div style="display:flex; flex-direction: row;justify-content: space-between;align-items: center;">
-        <div style="display:flex;align-items:center;margin:0.5em 0;height:2em">
-            <input type="color" name="documentColor" value="{{color.document.tag}}"/><label for="documentTagColor" style="margin: 0 0.6em 0 0.2em;">Tag</label>
-            <input type="color" name="documentTextColor" value="{{color.document.text}}"/><label for="documentTextColor" style="margin: 0 0 0 0.2em;">Text</label>
-        </div>
-        <div class='document-preview'>
-            <span class="tagit tag">JournalEntry</span>
-        </div>
+    <div class="tag-preview">
+      <span class="tagit tag">tag</span>
     </div>
-    <button type="button" name="reset">Reset</button>
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    "
+  >
+    <div
+      style="display: flex; align-items: center; margin: 0.5em 0; height: 2em"
+    >
+      <input
+        type="color"
+        name="documentColor"
+        value="{{color.document.tag}}"
+      /><label for="documentTagColor" style="margin: 0 0.6em 0 0.2em"
+        >Tag</label
+      >
+      <input
+        type="color"
+        name="documentTextColor"
+        value="{{color.document.text}}"
+      /><label for="documentTextColor" style="margin: 0 0 0 0.2em">Text</label>
+    </div>
+    <div class="document-preview">
+      <span class="tagit tag">JournalEntry</span>
+    </div>
+  </div>
+  <button type="button" name="reset">Reset</button>
 </form>
